@@ -1,6 +1,8 @@
 const express=require('express');
 const port=8000;
 
+const db=require('../server/config/mongoose');
+
 const app=express();
 
 app.listen(port,(error)=>{
