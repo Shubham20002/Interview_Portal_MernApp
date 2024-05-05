@@ -26,4 +26,12 @@ router.post('/signUp',async(req,res)=>{
    
   });
 
+  router.put('/update/:id',async(req,res)=>{
+     const user=await Candidate.findByIdAndUpdate(req.params.id,req.body,{new:true});
+     res.status(200).json({
+        message:"user updated successfully",
+        data:user
+     })
+  })
+
   module.exports=router;
