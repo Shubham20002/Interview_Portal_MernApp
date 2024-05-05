@@ -1,7 +1,7 @@
 const express=require('express');
 const router=express.Router();
 const Candidate=require('../../model/candidate')
-router.post('/',async(req,res)=>{
+router.post('/signUp',async(req,res)=>{
     try{
       const student=await Candidate.findOne({email:req.body.email});
       if(!student){
