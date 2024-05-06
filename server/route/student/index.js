@@ -2,6 +2,7 @@ const express=require('express');
 const router=express.Router();
 const Candidate=require('../../model/candidate');
 const middleware=require('../../config/middleware');
+
 router.post('/signUp',async(req,res)=>{
     try{
       const student=await Candidate.findOne({email:req.body.email});
@@ -41,7 +42,7 @@ router.get('/allstudent',async(req,res)=>{
     }
     
 })
-  router.put('/update/:id',middleware.middleware1,async(req,res)=>{
+  router.put('/update/:id',middleware.middleware2,async(req,res)=>{
 
     if(req.user.id!==req.params.id){
         console.log("error gettin here");
