@@ -1,13 +1,14 @@
 const express=require('express');
 const port=8000;
-
 const db=require('../server/config/mongoose');
+var cookieParser = require('cookie-parser')
 
 
 const app=express();
 
 app.use(express.urlencoded());
 app.use(express.json());
+app.use(cookieParser());
 
 app.use('/',require('./route'));
 app.listen(port,(error)=>{
